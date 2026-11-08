@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Encuentra tu próximo automóvil en Torres Motors.">
+  <meta name="theme-color" content="#101010">
+  <title>Torres Motors | Venta de Autos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header" id="top">
+    <a href="#inicio" class="logo" aria-label="Torres Motors, inicio">TORRES <span>MOTORS</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    <nav class="nav" id="mainNav" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#inventario">Vehículos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#pagos">Pagos</a>
+      <a href="#contacto">Contacto</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar a modo noche"><i class="fa-solid fa-moon"></i><span>Modo noche</span></button>
+      <button id="btnLoginHeader" class="btn btn-outline" type="button"><i class="fa-solid fa-user"></i> Iniciar sesión</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span></span> TORRES MOTORS · AGENCIA AUTOMOTRIZ</p>
+        <h1>Tu próximo auto<br><em>te está esperando.</em></h1>
+        <p class="hero-text">Encuentra el vehículo ideal para ti. Calidad, estilo y confianza en un solo lugar.</p>
+        <a href="#inventario" class="btn btn-gold">Explorar vehículos <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="hero-note"><strong>50</strong><span>opciones para<br>encontrar tu camino</span></div>
+    </section>
+
+    <section class="inventario section" id="inventario">
+      <div class="section-heading">
+        <p class="eyebrow">NUESTRO INVENTARIO</p>
+        <h2>Encuentra tu próximo <em>vehículo</em></h2>
+        <p>Explora nuestro catálogo de 50 modelos. Las fotografías son ilustrativas y deben confirmarse con el asesor.</p>
+      </div>
+      <div class="inventory-tools">
+        <label class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input type="search" id="buscador" placeholder="Buscar por marca o modelo..." aria-label="Buscar vehículos"></label>
+        <select id="filtro" aria-label="Filtrar por categoría">
+          <option value="todos">Todas las categorías</option>
+          <option value="sedan">Sedanes</option><option value="suv">SUV</option>
+          <option value="deportivo">Deportivos</option><option value="camioneta">Camionetas</option>
+        </select>
+        <select id="ordenPrecio" aria-label="Ordenar por precio">
+          <option value="relevancia">Ordenar: recomendados</option>
+          <option value="menor">Precio: menor a mayor</option>
+          <option value="mayor">Precio: mayor a menor</option>
+        </select>
+      </div>
+      <div class="results-line"><span id="contadorAutos">50 vehículos</span><span>Precios de referencia en MXN</span></div>
+      <div class="car-grid" id="car-grid" aria-live="polite"></div>
+      <p id="sin-resultados" class="sin-resultados" hidden>No encontramos vehículos con esa búsqueda.</p>
+    </section>
+
+    <section class="nosotros section" id="nosotros">
+      <div class="nosotros-content">
+        <p class="eyebrow">SOBRE NOSOTROS</p>
+        <h2>Conduce hacia tu próxima <em>historia.</em></h2>
+        <p>En Torres Motors queremos ayudarte a encontrar el auto que se adapte a tu estilo, tus necesidades y tu presupuesto. Nuestro equipo puede orientarte durante el proceso de selección y reservación.</p>
+        <a href="#contacto" class="btn btn-gold">Conócenos <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="about-mark">TM</div>
+    </section>
+
+    <section class="pagos section" id="pagos">
+      <div class="section-heading">
+        <p class="eyebrow">PAGOS SEGUROS</p>
+        <h2>Una compra clara, <em>paso a paso.</em></h2>
+        <p>Reserva un vehículo con un anticipo de $5,000 MXN. El saldo se acuerda y liquida directamente con la agencia.</p>
+      </div>
+      <div class="pagos-grid">
+        <article class="pago-card"><i class="fa-regular fa-credit-card"></i><h3>Tarjeta bancaria</h3><p>El pago se procesa en la página segura de Stripe. Torres Motors no almacena los datos de tu tarjeta.</p></article>
+        <article class="pago-card"><i class="fa-solid fa-building-columns"></i><h3>Transferencia SPEI</h3><p>Solicita los datos bancarios oficiales a un asesor antes de realizar una transferencia.</p></article>
+        <article class="pago-card"><i class="fa-solid fa-store"></i><h3>Otras opciones</h3><p>Consulta con ventas la disponibilidad de otros métodos de pago y sus condiciones.</p></article>
+      </div>
+      <p class="payment-disclaimer">La reservación queda confirmada únicamente cuando el proveedor de pago notifique que la transacción fue aprobada y la agencia valide la operación.</p>
+    </section>
+
+    <section class="contacto section" id="contacto">
+      <p class="eyebrow">ESTAMOS PARA AYUDARTE</p>
+      <h2>¿Buscas tu próximo auto?</h2>
+      <p>Contáctanos y pregunta por el vehículo que te interesa.</p>
+      <a href="mailto:ventas@torresmotors.com" class="btn btn-gold">Contactar a ventas <i class="fa-regular fa-envelope"></i></a>
+      <p class="contact-small">Correo de demostración: configura aquí el correo y teléfono oficiales de tu agencia.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#inicio" class="logo">TORRES <span>MOTORS</span></a>
+    <p>© <span id="year"></span> Torres Motors. Todos los derechos reservados.</p>
+    <a href="#top">Volver arriba ↑</a>
+  </footer>
+
+  <!-- Modal de acceso / registro -->
+  <div id="loginModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="authTitle" hidden>
+    <div class="modal-content">
+      <button class="close-modal" type="button" aria-label="Cerrar">&times;</button>
+      <p class="eyebrow">TU CUENTA TORRES MOTORS</p>
+      <h2 id="authTitle">Bienvenido</h2>
+      <div class="auth-tabs"><button type="button" class="active" id="tabLogin">Iniciar sesión</button><button type="button" id="tabRegister">Crear cuenta</button></div>
+      <form id="loginForm">
+        <label id="nameField" hidden>Nombre completo<input type="text" id="fullName" autocomplete="name" placeholder="Tu nombre"></label>
+        <label>Correo electrónico<input type="email" id="email" autocomplete="email" placeholder="correo@ejemplo.com" required></label>
+        <label>Contraseña<input type="password" id="password" autocomplete="current-password" minlength="8" placeholder="Mínimo 8 caracteres" required></label>
+        <p class="form-note">Demostración académica: las cuentas se guardan solo en este navegador. No uses contraseñas reales.</p>
+        <p class="form-error" id="authError" role="alert"></p>
+        <button type="submit" class="btn btn-gold btn-full" id="authSubmit">Ingresar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de reservación -->
+  <div id="pagoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="reserveTitle" hidden>
+    <div class="modal-content modal-pago">
+      <button class="close-modal" type="button" aria-label="Cerrar">&times;</button>
+      <p class="eyebrow">RESERVACIÓN</p><h2 id="reserveTitle">Aparta este vehículo</h2>
+      <div id="pagoDetalle" class="pago-detalle"></div>
+      <label class="payment-label" for="metodoPago">Selecciona tu método de pago</label>
+      <select id="metodoPago" class="payment-select">
+        <option value="spei">Transferencia bancaria (SPEI)</option>
+        <option value="tarjeta">Tarjeta bancaria</option>
+        <option value="oxxo">Efectivo en tienda (OXXO)</option>
+      </select>
+      <div id="datosBancarios" class="bank-info" aria-live="polite"></div>
+      <label class="terms-check"><input type="checkbox" id="aceptaTerminos"> He revisado que el anticipo es de $5,000 MXN y acepto continuar.</label>
+      <p class="nota-pago">Datos ficticios para demostración escolar. No realices transferencias ni pagos con esta información; no existe una cuenta bancaria real.</p>
+      <button id="btnPagar" class="btn btn-gold btn-full" type="button"><i class="fa-solid fa-check"></i> Simular pago</button>
+      <button id="btnWhatsApp" class="btn btn-whatsapp btn-full" type="button"><i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp</button>
+      <p class="form-error" id="paymentError" role="alert"></p>
+    </div>
+  </div>
+
+  <!-- Chat -->
+  <div id="chatWidget">
+    <button id="chatBubble" class="chat-bubble" type="button" aria-label="Abrir chat"><i class="fa-solid fa-comments"></i></button>
+    <section id="chatWindow" class="chat-window" aria-label="Chat de soporte" hidden>
+      <div class="chat-header"><div><strong>Soporte Torres Motors</strong><small>Asistente virtual</small></div><button id="closeChat" type="button" aria-label="Cerrar chat">&times;</button></div>
+      <div id="chatMessages" class="chat-messages"><div class="msg-bot">¡Hola! 👋 Soy el asistente virtual de Torres Motors. ¿En qué puedo ayudarte hoy?</div></div>
+      <form id="chatForm" class="chat-input"><input type="text" id="chatInput" placeholder="Escribe tu duda..." aria-label="Mensaje" required><button type="submit" aria-label="Enviar"><i class="fa-solid fa-paper-plane"></i></button></form>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
